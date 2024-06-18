@@ -1,0 +1,20 @@
+@media only screen and (max-width: 1502px) {
+    .skill-container {
+        flex-flow: column;
+    }
+
+    .skill-section {
+        flex-flow: row;
+        flex-wrap: wrap;
+        margin-bottom: 50px;
+    }
+
+    .skill-section h2 {
+        flex-basis: 100%;
+        gap: 0;
+    }
+
+    .skill-section .content-container {
+        margin-right: 30px;
+    }
+}

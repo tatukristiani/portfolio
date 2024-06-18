@@ -1,0 +1,28 @@
+.content-template {
+  margin: 20px;
+  margin-bottom: 150px;
+  margin-top: 150px;
+}
+
+.content-header-section h1 {
+  font-size: 3rem;
+}
+
+.content-header-line {
+  height: 1px;
+  background: linear-gradient(
+    45deg,
+    rgba(45, 82, 124, 0.932),
+    rgba(207, 228, 252) 50%,
+    rgb(0 14 30 / 93%) 85%
+  );
+  transform-origin: 0%;
+}
+
+.content-section p {
+  font-size: 1.5rem;
+}
+
+.content-section {
+  margin: 20px;
+}

@@ -1,0 +1,9 @@
+.introduction-container {
+  height: 700px;
+  align-content: center;
+  display: block;
+}
+
+.introduction-text-section p {
+  font-size: 2rem;
+}

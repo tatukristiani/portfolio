@@ -1,0 +1,10 @@
+.scroll-to-top {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+}
+
+.scroll-svg-icon:hover {
+  color: #3d7aa3;
+  height: 54px;
+}

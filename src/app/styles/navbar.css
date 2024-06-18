@@ -1,0 +1,146 @@
+.navbar-container * {
+  box-sizing: border-box;
+  transition: all 0.35 ease;
+}
+
+.navbar-item {
+  display: inline-block;
+  list-style: outside none none;
+  padding: 0;
+  text-align: center;
+}
+
+.navbar-container .navbar-link {
+  padding: 0.5em 0.8em;
+  position: relative;
+  text-decoration: none;
+}
+
+.navbar-container .navbar-link::before,
+.navbar-container .navbar-link::after {
+  content: "";
+  height: 14px;
+  width: 14px;
+  position: absolute;
+  transition: all 0.35s ease;
+  opacity: 0;
+}
+
+.navbar-container .navbar-link::before {
+  content: "";
+  right: 0;
+  top: 0;
+  border-top: 3px solid #145089;
+  border-right: 3px solid #0f4564;
+  transform: translate(-100%, 50%);
+}
+
+.navbar-container .navbar-link:after {
+  content: "";
+  left: 0;
+  bottom: 0;
+  border-bottom: 3px solid #0f4564;
+  border-left: 3px solid #145089;
+  transform: translate(100%, -50%);
+}
+
+.navbar .navbar-link:hover:before,
+.navbar .navbar-link:hover:after {
+  transform: translate(0, 0);
+  opacity: 1;
+}
+
+.navbar-container li a:hover {
+  cursor: pointer;
+}
+
+.navbar-container h1,
+a {
+  font-size: 1.5rem;
+}
+
+.navbar-container,
+.navbar-mobile-menu li {
+  border-image: linear-gradient(
+      45deg,
+      rgb(6, 36, 71, 0.932),
+      rgba(207, 228, 252) 50%,
+      rgba(6, 36, 71, 0.932)
+    )
+    30;
+  border-width: 1px;
+  border-style: solid;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+}
+
+.navbar-mobile-menu {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+}
+
+.navbar-mobile-menu .navbar-container {
+  padding: 0;
+  position: absolute;
+  top: -225px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: top 0.5s ease;
+  width: 100%;
+}
+
+.navbar-mobile-menu .navbar-container.active {
+  top: 0;
+}
+
+.navbar-mobile-button {
+  display: none;
+  margin-right: 1em;
+}
+
+.navbar-mobile-button:hover {
+  .navbar-mobile-link svg {
+    stroke: #3d7aa3;
+  }
+}
+
+.navbar-mobile-menu .navbar-link:hover {
+  color: #0077b5;
+}
+
+.navbar-mobile-item {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.navbar-mobile-menu .navbar-link {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.navbar .opened {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+@media only screen and (max-width: 630px) {
+  .navbar .navbar-item {
+    display: none;
+    margin: -0.2em 1em 0em 1em;
+  }
+
+  .navbar-mobile-button {
+    margin-right: 1em;
+  }
+
+  .navbar .navbar-mobile-button,
+  .navbar .navbar-logo {
+    display: inline-block;
+  }
+
+  .navbar-container {
+    justify-content: space-between;
+  }
+}
