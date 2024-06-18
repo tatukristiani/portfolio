@@ -40,7 +40,7 @@ export default function Projects() {
     "",
     "https://github.com/tatukristiani/shop-scraper-frontend",
   ];
-  const porftolioLinks = ["http://localhost:3000/", ""];
+  const porftolioLinks = ["", "https://github.com/tatukristiani/portfolio"];
   const vincitLinks = ["", "https://github.com/tatukristiani/VincitProject"];
 
   // Project descriptions
