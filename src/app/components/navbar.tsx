@@ -7,22 +7,11 @@ export default function Navbar() {
   const [mobileMenuActive, setMobileMenuActive] = useState(false);
   const [mobileNavActive, setMobileNavActive] = useState(false);
 
+  const isBrowser = () => typeof window !== "undefined";
+
   // Handles the non mobile navigation clicks and scrolls to target location
   const HandleNavItemClick = (target: string) => {
-    var element = document.getElementById(target);
-    if (element != null) {
-      var top = element.getBoundingClientRect().top - 120;
-      window.scrollTo({
-        behavior: "instant",
-        top: top,
-      });
-    }
-  };
-
-  // Handles mobile menu navigation item clicks
-  const HandleMobileMenuItemClick = (target: string) => {
-    setMobileMenuActive(false);
-    setTimeout(() => {
+    if (isBrowser()) {
       var element = document.getElementById(target);
       if (element != null) {
         var top = element.getBoundingClientRect().top - 120;
@@ -31,7 +20,24 @@ export default function Navbar() {
           top: top,
         });
       }
-    }, 500);
+    }
+  };
+
+  // Handles mobile menu navigation item clicks
+  const HandleMobileMenuItemClick = (target: string) => {
+    if (isBrowser()) {
+      setMobileMenuActive(false);
+      setTimeout(() => {
+        var element = document.getElementById(target);
+        if (element != null) {
+          var top = element.getBoundingClientRect().top - 120;
+          window.scrollTo({
+            behavior: "instant",
+            top: top,
+          });
+        }
+      }, 500);
+    }
   };
 
   // Handles the mobile hamburger menu click
@@ -41,12 +47,14 @@ export default function Navbar() {
 
   // Used to display mobile nav when screen width <= 630px, disables and hides mobile menu in case it was opened to reset state
   const DisplayMobileNav = () => {
-    if (window.innerWidth <= 630) {
-      setMobileNavActive(true);
-    } else {
-      setMobileNavActive(false);
-      SetMobileMenuHeight("0");
-      setMobileMenuActive(false);
+    if (isBrowser()) {
+      if (window.innerWidth <= 630) {
+        setMobileNavActive(true);
+      } else {
+        setMobileNavActive(false);
+        SetMobileMenuHeight("0");
+        setMobileMenuActive(false);
+      }
     }
   };
 
@@ -95,14 +103,18 @@ export default function Navbar() {
 
   // Used to set the mobile navigation at start
   useEffect(() => {
-    if (window.innerWidth <= 630) {
-      setMobileNavActive(true);
-    } else {
-      setMobileNavActive(false);
+    if (isBrowser()) {
+      if (window.innerWidth <= 630) {
+        setMobileNavActive(true);
+      } else {
+        setMobileNavActive(false);
+      }
     }
   }, []);
 
-  window.addEventListener("resize", DisplayMobileNav);
+  if (isBrowser()) {
+    window.addEventListener("resize", DisplayMobileNav);
+  }
 
   return (
     <>

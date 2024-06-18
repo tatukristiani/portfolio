@@ -5,6 +5,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
 
 export default function Introduction() {
+  const introduction2Text = `I'm a software engineer currently making
+            companies keep their systems running smoothly as an Integration
+            Developer.`;
   return (
     <div className="introduction-container p-12">
       <div className="text-center">
@@ -13,9 +16,7 @@ export default function Introduction() {
             Tatu Pulkkinen
           </h1>
           <p className="text-2xl drop-shadow-lg">
-            Hello there! <br></br> I'm a software engineer currently making
-            companies keep their systems running smoothly as an Integration
-            Developer.
+            Hello there! <br></br> {introduction2Text}
             <br />
             You can find out more down below!
           </p>

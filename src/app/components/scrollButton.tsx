@@ -6,26 +6,32 @@ import "../styles/scrollButton.css";
 export default function ScrollButton() {
   const [isVisible, setIsVisible] = useState(false);
 
+  const isBrowser = () => typeof window !== "undefined";
+
   const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "instant",
-    });
+    if (isBrowser()) {
+      window.scrollTo({
+        top: 0,
+        behavior: "instant",
+      });
+    }
   };
 
   useEffect(() => {
     // Button is displayed after scrolling for 500 pixels
-    const toggleVisibility = () => {
-      if (window.pageYOffset > 500) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
-    };
+    if (isBrowser()) {
+      const toggleVisibility = () => {
+        if (window.pageYOffset > 500) {
+          setIsVisible(true);
+        } else {
+          setIsVisible(false);
+        }
+      };
 
-    window.addEventListener("scroll", toggleVisibility);
+      window.addEventListener("scroll", toggleVisibility);
 
-    return () => window.removeEventListener("scroll", toggleVisibility);
+      return () => window.removeEventListener("scroll", toggleVisibility);
+    }
   }, []);
 
   return (

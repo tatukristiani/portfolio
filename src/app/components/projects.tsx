@@ -21,6 +21,7 @@ import { TailwindcssOriginal } from "devicons-react";
 import { CsharpOriginal } from "devicons-react";
 import { DotnetcoreOriginal } from "devicons-react";
 
+/* eslint-disable */
 export default function Projects() {
   // Project website link & Github link
   const consoleChessLinks = [

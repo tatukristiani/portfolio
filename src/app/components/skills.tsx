@@ -21,6 +21,7 @@ import { JiraalignOriginal } from "devicons-react";
 import { ConfluenceOriginal } from "devicons-react";
 import { GitOriginal } from "devicons-react";
 
+/* eslint-disable */
 export default function Skills() {
   return (
     <div id="skills" className="content-container">
