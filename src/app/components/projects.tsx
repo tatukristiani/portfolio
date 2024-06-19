@@ -1,3 +1,5 @@
+"use client";
+
 import Project from "./project";
 
 // Project images
@@ -109,7 +111,7 @@ export default function Projects() {
       />
       <Project
         projectInfo={{
-          name: "Web scraper ",
+          name: "Web scraper",
           image: webScraperImage,
           links: webScraperLinks,
           description: webScraperDesc,
