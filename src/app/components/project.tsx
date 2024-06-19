@@ -7,7 +7,6 @@ import Image from "next/image";
 import { useState } from "react";
 import "../styles/projects.css";
 
-// TODO: Switch current porftolio with final image at the end
 export default function Project({ projectInfo }: { projectInfo: any }) {
   const [detailsActive, setDetailsActive] = useState(false); // Used to show details of project
   const [githubIconActive, setGithubIconActive] = useState(false); // Used to animate github icon
@@ -79,12 +78,12 @@ export default function Project({ projectInfo }: { projectInfo: any }) {
         <Image
           src={projectInfo.image}
           alt={projectInfo.name}
-          className={`transition duration-300 ease-in-out block max-w-full h-auto ${
+          className={`block max-w-full h-auto ${
             detailsActive ? "opacity-0" : "opacity-100"
           }`}
         />
         <div
-          className={`transition duration-300 ease-in-out max-w-full flex flex-col justify-between p-2 absolute bottom-0 ${
+          className={`max-w-full flex flex-col justify-between p-2 absolute bottom-0 ${
             detailsActive ? "opacity-100" : "opacity-0"
           }`}
           style={{
