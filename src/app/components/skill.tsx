@@ -26,7 +26,7 @@ export default function Skill({
     }
 
     setSkillBar(`[${newSkillBar}] ${skillPoints}%`);
-  }, []);
+  });
 
   return (
     <div className="content-container mb-5">

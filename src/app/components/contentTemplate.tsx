@@ -32,11 +32,9 @@ export default function ContentTemplate({
   return (
     <motion.div
       className="content-template flex flex-col"
-      initial={{ opacity: 0 }}
+      initial={{ opacity: 1 }}
       whileInView={{ opacity: 1 }}
-      viewport={{
-        margin: "-200px",
-      }}
+      viewport={{ margin: "-200px" }}
     >
       <div className="content-header-section">
         <h1 className="font-medium">
